@@ -1,0 +1,274 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*  because we want to make it sticky */
+    height: 9.6rem;
+    /* margin: 1.2rem 0; */
+    padding: 0 6.2rem;
+    position:relative;
+    /* background-color:#000000; */
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow:  0 1px rgb(0 0 0 / 5%);
+    border-bottom: 1px solid rgb(240, 240, 240);
+    
+  
+  }
+  .logo{
+    width: 7rem;
+    height: 4rem;
+    cursor: pointer;
+    filter: brightness(0) invert(0);
+
+  }
+
+ 
+  
+  .mainNavList{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 6.8rem;
+    margin-left: 2rem;
+ /* margin-right: 10rem; */
+  
+    
+  }
+  /* .mainNavLink:link, .mainNavLink:visited{
+    background: transparent;
+    border: 0;
+    display: inline-block ;
+    padding-top: 1rem;
+    font-size: 1.8rem !important;
+    color: #9b9b9b !important;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 3.5rem;
+    transition: all 0.3s;
+    margin-bottom: 1rem;
+    
+  }
+  .mainNavLink::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0.2rem;
+    background: rgb(255, 255, 255);
+    transition: width .3s;
+  }
+  .mainNavLink:hover::after{
+    width: 100%;
+    transition: width .3s;
+  }
+
+  .mainNavLink:hover,.mainNavLink:active,.mainNavLink.active{
+    color:white;
+    transition: all 0.3s ease-in-out;
+  
+  } 
+  
+  .mainNavLink.active{
+    color:white;
+    border-bottom: 2px solid white;
+  } */
+  .actionsBTNS{
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+  .userIcon{
+    padding: 1rem;
+    font-size: 2rem;
+    color: #000000;
+  }
+  .userLogoutIcon{
+    padding: 1rem;
+    font-size: 2.2rem;
+    color: #000000;
+
+  }
+  .userIconProfile{
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    color: #000000;
+
+  }
+
+
+/* ---------------------------Hamburger MENU---------------------------- */
+
+.hamburger {
+  padding: 1.5rem;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  display: none;
+
+ }
+  .hamburger:hover {
+    opacity: 0.7;
+   }
+  .hamburger.is-active:hover {
+    opacity: 0.7; 
+  }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #000; 
+  }
+
+.hamburger-box {
+  width: 4rem;
+  height: 2.4rem;
+  display: inline-block;
+  position: relative;
+ }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; 
+}
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 3rem;
+    height: 0.4rem;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; 
+  }
+  
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+
+    /*
+   * Squeeze
+   */
+.hamburger--squeeze .hamburger-inner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--squeeze .hamburger-inner::before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+  .hamburger--squeeze .hamburger-inner::after {
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--squeeze.is-active .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--squeeze.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease; }
+  .hamburger--squeeze.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+
+/* --------------------------- END Hamburger MENU---------------------------- */
+
+
+@media screen and (max-width: 768px) {
+
+ .header{
+  padding: 0 4.2rem;
+ }
+  .hamburger{
+    display: grid;
+    
+  }
+  .hamburger-box {
+    width: 3rem;
+    height: 1.4rem;
+    display: inline-block;
+    position: relative;
+   }
+  .logo{
+    display: grid;
+    align-items: center;
+    place-content: center;
+    width: 4.5rem;
+    height: 2.8rem;
+  }
+  .actionsBTNS{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .userIcon{
+    display: grid;
+    padding: 0 0.5rem !important;
+    font-size: 2.2rem;
+    height: 3.5rem;
+    place-content: center;
+    /* background: aquamarine; */
+
+  }
+
+  .logoutIcon{
+    display: grid;
+    padding: 0 0.5rem !important;
+    font-size: 3rem;
+    height: 3.5rem;
+    place-content: center;
+    background: aquamarine;
+
+  }
+  .userIconProfile{
+    padding: 0.5rem !important;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 50%;
+    color: #000000;
+
+  }
+  .mainNav{
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0 2rem;
+    transform: translateX(-100%);
+    z-index: 100;
+  }
+  .mainNavList{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+    gap: 4rem;
+    margin-top: 5rem;
+  }
+  .navActive{
+
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  
+ 
+}

@@ -1,0 +1,290 @@
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+.productsWrapper{
+    font-family: 'Futura PT', sans-serif;
+    display: swap;
+    max-width: 100%;
+    height: auto;
+}
+.carouselWrapper{
+    max-width: 100%;
+    height: 45rem;
+    overflow: hidden;
+}
+.carouselContainer{
+    max-width: 100%;
+    height: 100%;
+}
+.imageContainer{
+    max-width: 100%;
+    height: 100%;
+}
+.carouselPic{
+width: 100%;    height: 100%;
+    object-fit: cover;
+
+
+    }
+
+.parentGrid {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 5rem;
+}
+    
+
+.containerLeft{
+    position: sticky;
+    top: 0;
+    padding:0  2.4rem 1.2rem 2.4rem;
+    height: 100vh;
+    width: 80%;
+    overflow-y: scroll;
+    
+}
+
+.accordionItem{
+    margin-bottom: 1rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #b0b0b0;
+}
+.accordionMainHead{
+    padding: 0 1rem;
+}
+
+.accordionHead{
+    font-family: inherit;
+    text-align: start !important;
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+    letter-spacing: 1.425px;
+    font-weight: 500;
+    /* margin-bottom: 1rem; */
+    text-align: center;
+    cursor: pointer;
+    color: #000000;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accordionHead:hover{
+    color: #000000;
+    background-color: #f2f2f2;
+}
+
+.shopByItem{
+    font-family: 'Futura PT', sans-serif;
+    display: swap;
+    font-size: 2.4rem;
+    font-weight: 400;
+    padding: 3rem 0;
+    border-bottom: 1px solid #b0b0b0;
+    
+}
+.shopByHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+.shopByTitle{
+    font-family: 'Futura PT', sans-serif;
+    display: swap;
+    font-size: 2.2rem;
+    font-weight: 400;
+  
+}
+.arrowIcon{
+    width: 2.4rem;
+    height: 2.4rem;
+    cursor: pointer;
+}
+
+.inputCheckbox{
+    appearance: none;
+  height: 2.2rem;
+  width: 2.2rem;
+  background: #fff;
+  border: 2px solid #b0b0b0;
+  margin: 0 8px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline-offset: 5px;
+  outline-color: #b0b0b0;
+}
+.inputCheckbox::after{
+    content: "";
+    display: block;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+}
+.inputCheckbox:checked::after{
+    transform: scale(1);
+}
+input[type="checkbox"]{
+    border-radius: 5px;
+
+}
+input[type="checkbox"]::after{
+    width: 16px;
+    height: 16px;
+}
+input[type="checkbox"]:checked{
+    background-color:black;
+    border: none;
+}
+input[type="checkbox"]:checked::after{
+    content: url("data:image/svg+xml, <svg viewBox='0 0 16 15' xmlns='http://www.w3.org/2000/svg'><path fill='white' d='M15.25.847a1.51 1.51 0 0 1 .405 2.096L8.106 14.11a1.944 1.944 0 0 1-2.94.329L.6 10.156a1.51 1.51 0 1 1 2.067-2.202l3.645 3.42 6.841-10.122a1.51 1.51 0 0 1 2.098-.405Z'/></svg>");
+}
+
+
+.inputLabel{
+    font-family: 'Futura PT', sans-serif;
+    display: swap;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+.priceRangeItem{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    
+
+}
+
+
+
+
+
+
+
+/* PRODUCTS LEFT CONTAINER  */
+
+.containerRight{
+    height: 100%;
+    width: 100%;
+    padding: 1.2rem 2.4rem;
+}
+.productsHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding: 1.2rem 2.4rem;
+}
+.showingProductsNumber{
+    font-family: 'Futura PT', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+/* Search Input CSS */
+.search-wrapper {
+    position: relative;
+    background: #e5e5e5;
+    border-radius: 20px;
+    transform-origin: 100% 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 250ms ease;
+  }
+  .search-wrapper.focused {
+    width: 55rem;
+    height: 4rem;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px #cccccc;
+
+  }
+  .search-wrapper.focused input {
+    padding: 1.2rem 2.4rem;
+    width: 100%;
+    transform: scale(1);
+    font-size: 1.8rem;
+  }
+  .search-wrapper input {
+    background: transparent;
+    border: 0;
+    color: #000000;
+    outline: none;
+    height: 4rem;
+    width: 4rem;
+    overflow: hidden;
+    font-weight: 100;
+    transform: scale(0);
+    transform-origin: 0 50%;
+    transition: 275ms ease;
+  }
+  .search-wrapper input::-moz-placeholder {
+    color: #cccccc;
+  }
+  .search-wrapper input:-ms-input-placeholder {
+    color: #cccccc;
+  }
+  .search-wrapper input::placeholder {
+    color: #cccccc;
+  }
+  .search-wrapper i {
+    position: absolute;
+    color: #000000;
+    font-size: 18px;
+    top: 50%;
+    right: 13px;
+    transform: translateY(-50%);
+  }
+
+  /* END OF IT */
+.showNumbers{
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+
+}
+.prdouctsContainer{
+    padding: 1.2rem 2.4rem;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2.4rem;
+    grid-row-gap: 2.4rem;
+    margin-bottom: 5rem;
+    justify-items: center;
+}
+
+.productItem{
+    width: 30rem;
+    height: 40rem;
+}
+
+
+.NoProducts{
+    font-family: 'Futura PT', sans-serif;
+    display: swap;
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.noFilteredProductsFoundMessage{
+    text-align: center;
+    height: 31rem;
+    font-size: 3rem;
+    font-weight: 600;
+    cursor: none;
+    display: grid;
+    align-items: center;
+}

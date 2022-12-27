@@ -1,0 +1,13 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.071);
+    max-width: 90rem;
+    margin: 0 auto;
+    text-align: center;
+    font-family: arial;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.7rem;
+
+}

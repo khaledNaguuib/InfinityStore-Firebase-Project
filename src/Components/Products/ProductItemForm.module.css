@@ -1,0 +1,61 @@
+.form {
+    text-align: right;
+  }
+  
+
+  .form button {
+    width: 100%;
+    font: inherit;
+    cursor: pointer;
+    background-color: #000000;
+    border: 1px solid #d3d3d3;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+  
+  .form button:hover,
+  .form button:active {
+    background-color: #2e2e2e;
+    border-color: #e4e4e4;
+  }
+  .formControl{
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 10rem;
+  }
+
+  .validationMSG{
+    margin: 0 auto;
+    margin-top: 1rem;
+  
+    color: #f03e3e;
+    font-size:1.6rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+
+@media screen and (max-width: 768px) {
+  .formControl{
+    flex-direction: column;
+    height: 12rem;
+  }
+  .formControl label{
+    margin-bottom: 0.5rem;
+  }
+  .formControl input{
+    margin-bottom: 0.5rem;
+  }
+  .formControl button{
+    margin-bottom: 0.5rem;
+  }
+
+}

@@ -1,0 +1,148 @@
+
+.imageWrapper{
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+  }
+  .titleDiv{
+    height: 4rem;
+    /* background-color: red; */
+    margin-bottom: 1.2rem;
+
+  }
+  .genderDiv{
+    height: 4rem;
+    /* background-color: blue; */
+
+  }
+  .priceDiv{
+    height: 4rem;
+    /* background-color: green; */
+    margin-bottom: 3rem;
+
+  }
+  .descDiv{
+    height: 20rem;
+    margin-bottom: 3rem;
+    /* background-color: yellow; */
+  }
+    .title{
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+  .price {
+      color: grey;
+      font-size: 3rem;
+      font-weight: 900;  
+  }
+  
+  .cardImage{
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem;
+      width: 100%;
+      height: 100%;
+      display: block;
+      transition: all 0.3s;
+  }
+  .cardImage:hover{
+    transform: scale(1.1);
+  }
+  .genderTitle{
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: grey;
+
+  }
+  .productInfo{
+    height: 38rem;
+    text-align: start;
+    padding: 1.2rem 2.4rem;
+    /* margin-bottom: 2rem; */
+  }
+  
+   .desc{
+      font-size: 1.6rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+  }
+
+
+  .cardItemList{
+
+    width: 35rem;
+    /* padding: 1.2rem 2.4rem; */
+    list-style: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .imageWrapper{
+      /* background-color: aqua; */
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+    }
+    .titleDiv{
+      height: 5rem;
+      /* background-color: red; */
+
+    }
+    .genderDiv{
+      height: 2rem;
+      margin-bottom: 0.5rem;
+
+      /* background-color: blue; */
+
+    }
+    .priceDiv{
+      height: 2rem;
+      /* background-color: green; */
+
+    }
+    .descDiv{
+      display: none;
+      /* background-color: yellow; */
+    }
+      .title{
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+    .price {
+        color: grey;
+        font-size: 1.4rem;
+        font-weight: 900;  
+        margin-bottom: 1.5rem;
+    }
+    
+    .cardImage{
+      border-top-left-radius: 0.7rem;
+      border-top-right-radius: 0.7rem;
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: all 0.3s;
+    }
+    .cardImage:hover{
+      transform: scale(1.1);
+    }
+    .genderTitle{
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: grey;
+  
+    }
+    .productInfo{
+      height: auto;
+      /* background-color: aqua; */
+      text-align: start;
+      padding: 0.6rem 1.2rem;
+    }
+    
+    
+  
+    .cardItemList{
+      width: 20rem;
+      list-style: none;
+    }
+  
+  
+   
+  }

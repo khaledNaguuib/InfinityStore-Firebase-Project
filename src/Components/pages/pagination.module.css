@@ -1,0 +1,199 @@
+/* [ YEK/SASS - VERSION : 3.1.0 ] */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swaps");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/yekan-font@1.0.0/css/yekan-font.min.css");
+.visible-hidden {
+  visibility: hidden;
+}
+
+/* YEK/SASS (https://npmjs.com/yek/sass) */
+/* __[ FONT'S ]__ */
+/* __[ VARIABLE ]__ */
+/* __[ :ROOT ]__ */
+:root {
+  --color-primary: #1a2556;
+  --color-secondary: #a5b3d4;
+  --color-gray: #dde6f3;
+  --color-light-gray: #f3f6fb;
+  --color-white: white;
+  --color-black: #3e3743;
+  --color-input-hover: rgba(165, 179, 212, 0.6);
+  --color-input-focus: rgba(26, 37, 86, 0.45);
+  --color-input-error: rgba(255, 94, 31, 0.6);
+  --color-input-warning: rgba(166, 145, 54, 0.6);
+  --color-input-success: rgba(23, 125, 23, 0.45);
+  --color-input-disabled: #dde6f3;
+  --font-family: Roboto, Montserrat, sans-serif;
+  --font-persian: Yekan, Lalezar, cursive;
+  --font-proxima: proxima-soft, Proxima Soft, Proxima Nova Soft, Helvetica, Arial, sans-serif;
+}
+
+
+
+.pagination {
+  margin: 15rem auto;
+  width: 50rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.paginationButton {
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  background: transparent;
+  color: #000000;
+  border-color: 1px solid #b0b0b0;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+.paginationButton:hover{
+    background: #000000;
+    color: white;
+}
+.paginationLeftArrow{
+    position: relative;
+    margin: 0 1rem ;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 2.4rem;
+    border-radius: 50%;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    
+
+}
+
+.paginationRightArrow{
+    position: relative;
+    margin: 0 1rem ;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding:2.4rem;
+    border-radius: 50%;
+    border-color: transparent;
+    cursor: pointer;
+    background: transparent;
+}
+.arrowIcon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pagination__item > button, .pagination__button {
+  border: none;
+  outline: none;
+  stroke: none;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 9px;
+  background: var(--color-gray);
+}
+.active{
+    background: #000000;
+    color: white;
+}
+.pagination__item > button:hover, .pagination__button:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+.pagination__item > button {
+  width: 45px;
+  height: 45px;
+}
+.pagination__item > button[data-level=target] {
+  background: var(--color-primary);
+  color: var(--color-light-gray);
+}
+.pagination--move-prev {
+  -webkit-animation: pagination-move-prev 0.5s ease both;
+          animation: pagination-move-prev 0.5s ease both;
+}
+.pagination--move-next {
+  -webkit-animation: pagination-move-next 0.5s ease both;
+          animation: pagination-move-next 0.5s ease both;
+}
+.pagination--move-top {
+  -webkit-animation: pagination-move-top 0.5s ease both;
+          animation: pagination-move-top 0.5s ease both;
+}
+.pagination__button {
+  width: 35px;
+  height: 35px;
+}
+
+@-webkit-keyframes pagination-move-prev {
+  from, 0% {
+    transform: translateX(25px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  to, 100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes pagination-move-prev {
+  from, 0% {
+    transform: translateX(25px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  to, 100% {
+    transform: translateX(0px);
+  }
+}
+@-webkit-keyframes pagination-move-next {
+  from, 0% {
+    transform: translateX(-25px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  to, 100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes pagination-move-next {
+  from, 0% {
+    transform: translateX(-25px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  to, 100% {
+    transform: translateX(0px);
+  }
+}
+@-webkit-keyframes pagination-move-top {
+  from, 0% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  to, 100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes pagination-move-top {
+  from, 0% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  to, 100% {
+    transform: translateY(0px);
+  }
+}

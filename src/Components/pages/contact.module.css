@@ -1,0 +1,367 @@
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+.contactWrapper{
+    max-width: 120rem;
+    height: auto;
+    margin: 10rem auto;
+    font-family: 'Futura PT', sans-serif;
+    font-display: swap;
+
+    color: #000000;
+    padding: 1.2rem 2.4rem;
+}
+.contactContainer{
+    width: 100%;
+    height: 100%;
+    padding: 1.2rem 2.4rem;
+    margin: 0 auto;
+
+}
+.line{
+    width: 80%;
+    text-align: center;
+    height: 0.1rem;
+    background-color: rgb(215, 215, 215);
+    margin: 0 auto;
+    margin-bottom: 5rem;
+
+}
+
+.titlePrimary{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-display: swap;
+
+    font-size: 10rem;
+    line-height: 6rem;
+    font-weight: 900;
+    letter-spacing: normal;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.titleSecondary{
+    font-family: inherit;
+    text-align: center;
+    font-size: 3rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    margin-bottom: 5rem;
+    text-align: center;
+
+
+}
+
+
+.clarify{
+    font-family: inherit;
+    text-align: start !important;
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+    letter-spacing: 1.425px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.listItem{
+    font-family: inherit;
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+    letter-spacing: 1.425px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+
+}
+.clarifyBold{
+    font-family: inherit;
+    text-align: start !important;
+    font-size: 1.9rem;
+    line-height: 2.7rem;
+    letter-spacing: 1.425px;
+    font-weight:400;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+li::marker{
+    color: #000000;
+}
+
+.icon{
+    font-size: 2rem;
+    margin: 0 1rem;
+    fill: #57ad6b;
+}
+
+
+
+/* FORM CSS */
+
+
+.formContainer{
+    width: 100%;
+    height: 100%;
+    margin: 5rem 0;
+}
+.formControlGroup{
+    width: 100%;
+    display: flex;
+    margin: 2rem 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.formControl{
+    width: 100%;
+    margin: 2rem 0;
+}
+.formFlex{
+    width: 45%;
+    margin: 2rem 0;
+}
+.inputLabel{
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    letter-spacing: 3px;
+    text-align: left;
+    text-indent: 0%;
+
+}
+
+.formInput{
+    width:100%;
+    display: block;
+    padding: 1.2rem 2.4rem;
+    margin-bottom: 4rem;
+    border: 1px solid #e8e8e1;
+}
+.formInputTextArea{
+    width:100%;
+    height: 15rem;
+    max-height: 25rem;
+    display: block;
+    padding: 1.2rem 2.4rem;
+    margin-bottom: 3rem;
+    border: 1px solid #e8e8e1;
+    resize: vertical;
+
+}
+.formInputTextArea:focus{
+outline: none;
+border: 1px solid #000000;
+}
+.formInputGroup{
+    width:45%;
+    display: block;
+    padding: 1.2rem 2.4rem;
+    margin-bottom: 3rem;
+    border: 1px solid #e8e8e1;
+}
+.formInput:focus{
+    outline: none;
+    border: 1px solid #000000;
+}
+
+
+
+.btnSubmit{
+    font-family: 'Futura PT', sans-serif;
+    width: 50%;
+    padding: 1.3rem 2rem;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+   
+}
+
+.btnSubmit:hover,.btnSubmit:focus{
+    background-color: rgb(65, 65, 65);
+    border: 1px solid #fff5f5;
+}
+
+.imageMap{
+    width:100%;
+    height: 50rem;
+}
+
+.errorMessage{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #fef6f6;
+    border: 1px solid #cf2d2e;
+    font-size: 1.8rem;
+    color: #f03e3e;
+}
+.errorMsgList{
+    padding: 0 1rem;
+}
+
+
+.successMessage{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #ebfdf0;
+    border: 1px solid #acd6b4;
+    font-size: 1.8rem;
+    color: #57ad6b;
+
+}
+.successMsgList{
+    padding: 0 1rem;
+}
+
+.inputClarify{
+    font-size: 1.3rem;
+    color: #848484;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+
+    .titlePrimary{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 6rem;
+        line-height: 5rem;
+        font-weight: 900;
+        letter-spacing: normal;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .titleSecondary{
+        font-family: inherit;
+        text-align: center;
+        font-size: 2rem;
+        line-height: 3.4rem;
+        letter-spacing: 3px;
+        font-weight: 400;
+        margin-bottom: 4rem;
+        text-align: center;
+    
+    
+    }
+    .line{
+        width: 100%;
+    
+    }
+    
+    
+    .formContainer{
+        margin: 0 auto;
+    }
+    .clarifyBold{
+        font-family: inherit;
+        font-size: 1.6rem;
+        line-height: 3rem;
+        letter-spacing: 1.425px;
+        font-weight:400;
+        margin-bottom: 4rem;
+        text-align: start !important;
+    }
+    
+    .listItem{
+        text-align: start;
+        font-family: inherit;
+        font-size: 1.6rem;
+        line-height: 2.7rem;
+        letter-spacing: 1.425px;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        list-style: none;
+    
+    }
+  
+    
+    .icon{
+        font-size: 2rem;
+        margin-right: 2rem;
+        fill: #57ad6b;
+        margin-left: 0;
+    }
+
+
+    .formContainer{
+        width: 100%;
+        height: 100%;
+        margin: 5rem 0;
+    }
+    .formControlGroup{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 0;
+    }
+    .formControl{
+        width: 100%;
+        margin-bottom: 4rem; 
+   }
+    .formFlex{
+        width: 100%;
+        margin-bottom: 2rem ;
+    }
+    .inputLabel{
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 1rem;
+        line-height: 2rem;
+        letter-spacing: 3px;
+        text-align: left;
+        text-indent: 0%;
+    
+    }
+    
+    .formInput{
+        width:90%;
+        display: block;
+        padding: 1.2rem 2.4rem;
+        margin-bottom: 1rem;
+        border: 1px solid #e8e8e1;
+    }
+
+    .formInputTextArea{
+        width:90%;
+        height: 15rem;
+        max-height: 25rem;
+        display: block;
+        padding: 1.2rem 2.4rem;
+        margin-bottom: 3rem;
+        border: 1px solid #e8e8e1;
+        resize: vertical;
+    
+    }
+
+.inputClarify{
+    display: inline-block;
+    font-size: 1.1rem;
+    color: #848484;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+.errorMessage,.successMessage{
+    width: 90%;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+}
+}

@@ -1,0 +1,32 @@
+.input {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 1rem; */
+  }
+  
+  .input label {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-right: 1.2rem;
+  }
+  
+  .input input {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font: inherit;
+    padding-left: 1.4rem;
+  }
+
+@media screen and (max-width: 768px) {
+  .input input {
+    width: 6rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font: inherit;
+    padding-left: 1.7rem;
+  }
+
+}

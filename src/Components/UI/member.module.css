@@ -1,0 +1,164 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.banner-wrapper {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10rem;
+    color: rgb(255, 255, 255);
+    width: 150rem;
+    animation: introLoad 2s forwards;
+
+
+}
+@keyframes introLoad{
+    0%{
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    100%{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+.container {
+    padding: 2.4rem 4.8rem;
+    background-color: rgb(0, 0, 0);
+}
+
+.image-logo {
+    width: 35   rem;
+    height: 35rem;
+    filter: brightness(0) invert(1);
+    aspect-ratio: 1/1;
+}
+
+.content-left {
+    width: 35%;
+    padding: 1.2rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-title {
+    font-family: 'Futura Md BT', sans-serif;
+    font-size: 7rem;
+    letter-spacing: -3.8px;
+    line-height: 6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+
+}
+
+.desc {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.btn-join {
+    padding: 1.2rem;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    border-radius: 5rem;
+    border: 1.5px solid transparent;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #111;
+    width: 25%;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+    }
+    
+    .banner-wrapper {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 10rem;
+        color: rgb(255, 255, 255);
+        width: 150rem;
+        animation: introLoad 2s forwards;
+    
+    
+    }
+
+    .image-logo {
+        width: 15rem;
+        height: 15rem;
+        filter: brightness(0) invert(1);
+        aspect-ratio: 1/1;
+    
+    }
+    
+    .content-left {
+        text-align: center;
+        width: 70%;
+        padding: 1.2rem 2.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .header-title {
+        font-family: 'Futura Md BT', sans-serif;
+        font-size: 4rem;
+        letter-spacing: -1px;
+        line-height: 6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    
+    }
+    
+    .desc {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 1.4rem;
+        margin-bottom: 4    rem;
+    }
+    
+    .btn-join {
+        text-align: center;
+        padding: 6px 20px;
+        border-radius: 30px;
+        border: 1.5px solid transparent;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background: #fff;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #111;
+        width: 100%; 
+        margin-top: 2rem;
+    
+    }
+    
+}

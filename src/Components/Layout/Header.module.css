@@ -1,0 +1,146 @@
+
+
+
+  /* HERO SECTION */
+
+  .sectionHero{
+    padding: 4.8rem 0 9.6rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 9.6rem;
+    
+  }
+  /* .hero{
+    margin-top: 9.2rem;
+    
+  } */
+  .rightSide{
+    padding: 4rem 6.2rem;
+    width: 90%;
+  }
+   .mainHeading{
+      font-size: 6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.05;
+      color: #333;
+      margin-bottom:3.2rem;
+      animation: headingLoad 2s ease-in;
+      
+  }
+  .subHeading{
+      font-size: 2.5rem;
+      font-weight: 200;
+      color: black;
+      margin-bottom: 3.4rem;
+      line-height: 1.6;
+      animation: headingLoad 1s ease-in;
+  
+  }
+   @keyframes headingLoad {
+      from{
+        transform: translateX(-3rem);
+        opacity: 0;
+      }
+      to{
+        transform: translateX(0);
+        opacity: 1;
+      }
+      
+  }
+    
+  svg.downArrow{
+      stroke: black;
+      width: 3.5rem;
+      height: 20rem;
+      animation: moveArrow 1s alternate-reverse infinite;
+      
+  }
+  .downArrowPath{
+    fill:black;
+  }
+  @keyframes moveArrow{
+      0%{
+        transform: translateY(-1.5rem);
+      }
+      100%{
+        transform: translateY(1.5rem);
+      }
+  }
+  
+
+  .heroImg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 85vh;
+    background:linear-gradient(to bottom right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)) ,url(../../asstes-optimized/NikeBlack.webp);
+    background-size: cover;
+    /* background-color: black; */
+    z-index: -1;
+    animation: introLoad 2s forwards;
+    background-position-x: 0rem;
+    background-position-y: -46rem;
+  }
+  
+  @keyframes introLoad{
+    0%{
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    100%{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+
+  nav a.active{
+    color:#f9b2b2;
+    border-bottom: 2px solid #f9b2b2;
+    padding-bottom: 0.5rem;
+
+
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .sectionHero{
+      grid-template-columns: 1fr;
+      padding: 4.8rem 0 9.6rem 0;
+      gap: 0;
+    }
+    .rightSide{
+      padding: 4rem 2rem;
+      width: 100%;
+    }
+    .heroImg{
+      width: 100%;
+      height: 100vh;
+      background-position-x: 0rem;
+      background-position-y: 10rem;
+    }
+    .mainHeading{
+      font-size: 5rem;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.05;
+      color: rgb(255, 255, 255);
+      margin-bottom:3.2rem;
+      animation: headingLoad 2s ease-in;
+
+  }
+  .subHeading{
+      font-size: 1.8rem;
+      font-weight: 200;
+      color: rgb(255, 255, 255);
+      margin-bottom: 3.4rem;
+      line-height: 1.6;
+      animation: headingLoad 1s ease-in;
+      text-align: center;
+  }
+.downArrow{
+  display: none;
+}
+  }

@@ -1,0 +1,153 @@
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+
+.loginWrapper{
+    max-width: 40rem;
+    height: auto;
+    font-family: 'Futura PT', sans-serif;
+    font-display: swap;
+    margin: 10rem auto;
+    /* background-color: red; */
+}
+.loginContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+.formWrapper{
+    width: 100%;
+}
+.title{
+    align-self: center;
+    font-size: 4rem;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 5rem;
+}
+.formControl{
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.label{
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    letter-spacing: 3px;
+    text-align: left;
+    text-indent: 0%;
+}
+.formInput{
+    width:100%;
+    display: block;
+    padding: 1.2rem 2.4rem;
+    margin-bottom: 3rem;
+    border: 1px solid #e8e8e1;
+
+}
+.formInput:focus{
+    outline: none;
+    border: 1px solid #000000;
+}
+.labelGroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.forgotPassword{
+    font-size: 1.6rem;
+    font-weight: 400;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 0.4px;
+    margin-bottom: 1rem;
+    line-height: 2.3rem;
+
+}
+.loginBtn{
+    font-family: 'Futura PT', sans-serif;
+    font-display: swap;
+
+    width: 100%;
+    padding: 1.3rem 2rem;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+
+}
+.loginBtn:hover{
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+.registerBtn{
+    font-family: 'Futura PT', sans-serif;
+    font-display: swap;
+
+    width: 100%;
+    padding: 1.3rem 2rem;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border: 1px solid #000000;
+    outline: none;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    line-height: normal;
+}
+.registerBtn:hover{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+}
+
+.loader{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+
+.errorMessage{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #fef6f6;
+    border: 1px solid #cf2d2e;
+    font-size: 1.8rem;
+    color: #f03e3e;
+}
+.show{
+    display: block;
+}
+.errorMsgList{
+    padding: 0 1rem;
+}

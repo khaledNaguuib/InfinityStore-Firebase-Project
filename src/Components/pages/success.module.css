@@ -1,0 +1,18 @@
+.successContainer{
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    justify-content: center;
+    margin-bottom: 5rem;
+    /* background-color: aqua; */
+    
+}
+.successContent{
+    text-align: center;
+
+    align-items: center;
+}

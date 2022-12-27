@@ -1,0 +1,53 @@
+.section-featured{
+    margin:20rem auto 7.2rem auto;
+    padding: 4.8rem 0 9.6rem 0;
+}
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 4.8rem ;
+    filter: brightness(0);
+    opacity: 0.5 !important;
+  }
+
+.section-heading{
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color:#333;
+    text-align: center;
+    margin-bottom: 3.4rem;
+
+  
+}
+.featured-logos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.imageFilter{
+    height: 3rem;
+}
+
+ 
+@media screen and (max-width: 768px) {
+
+  
+.featured-logos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+  
+    
+}
+
+.imageFilter{
+    animation: loadLogos 1s ease-in;
+    height: 2rem;
+    filter: brightness(0);
+    opacity: 50%;
+}
+
+    
+}

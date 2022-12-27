@@ -1,0 +1,328 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/futura-md-bt');
+@import url('https://fonts.cdnfonts.com/css/futura-pt'); */
+
+
+/* Colors:
+
+
+PRIMARY: #f03e3e
+
+TINTS: #f25151 , #f25151 ,#f36565, #f57878, #f68b8b, #f89f9f, #f9b2b2
+
+SHADES: #a82b2b, #902525, #781f1f, #601919, #481313, #300c0c, #180606
+
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-display: swap;
+
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-display: swap;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9;
+    /* color: #444; */
+    color: #000000;
+  /* background-color: #f3efe9; */
+  background-color: #ffffff;
+  /* background-color: aqua; */
+
+     /* background-color: #f3f3f3; */
+     /* overflow: hidden; */
+}
+
+.active{
+  color:white !important;
+  border-bottom: 2px solid white;
+}
+
+.loader{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+.loader2{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ---------------- GENERAL CSS FOR WAVY LINES ---------------- */
+#root > header > nav > ul > li > button{
+  background: transparent !important;
+  border: 0 !important;
+  display: inline-block !important ;
+  padding-top: 1rem !important;
+  font-size: 1.8rem !important;
+  /* color: #9b9b9b !important; */
+  color: #5e5e5e !important;
+
+  font-weight: 300 !important;
+  text-decoration: none !important;
+  margin-right: 3.5rem !important;
+  margin-bottom: 1rem !important;
+  transition: all 0.3s !important;
+}
+
+#root > header > nav > ul > li > button:link, #root > header > nav > ul > li > button:visited{
+  background: transparent !important;
+  border: 0 !important;
+  display: inline-block !important ;
+  padding-top: 1rem !important;
+  font-size: 1.8rem !important;
+  color: #5e5e5e !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  margin-right: 3.5rem !important;
+  transition: all 0.3s !important;
+  margin-bottom: 1rem !important;
+  
+}
+#root > header > nav > ul > li > button:after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0.2rem;
+  background: #000000;
+  transition: width .3s;
+  margin-top: 3px;
+
+}
+#root > header > nav > ul > li > button:hover::after{
+  width: 100%;
+  transition: width .3s;
+}
+
+#root > header > nav > ul > li > button:hover,#root > header > nav > ul > li > button:active,#root > header > nav > ul > li > button.active{
+  color:#000000 !important;
+  transition: all 0.3s ease-in-out !important;
+
+} 
+
+#root > header > nav > ul > li > button.active{
+  color:white;
+  border-bottom: 2px solid white;
+}
+/* ---------------- END OF GENERAL CSS FOR WAVY LINES ---------------- */
+
+
+
+/* to stop auto-complete browser styles */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+/* END OF IT */
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Contact us wavy link styles  in FAQ page */
+#root > div.faq_faqWrapper__2-ZNa > div.faq_faqContainer__3eKX1 > p > button{
+  font-family: 'Futura PT', sans-serif;
+  font-size: 2rem !important;
+  font-weight: 500 !important;
+  border-bottom: 0.5px solid #c1c1c1;
+
+
+}
+#root > div.faq_faqWrapper__2-ZNa > div.faq_faqContainer__3eKX1 > p > button:after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0.2rem;
+  background: #000000;
+  transition: width .3s;
+  margin-top: 3px;  
+
+}
+#root > div.faq_faqWrapper__2-ZNa > div.faq_faqContainer__3eKX1 > p > button:hover::after{
+  width: 100%;
+  transition: width .3s;
+}
+
+ 
+/* ---------------- END OF CONTACT US WAVY LINK STYLES ---------------- */
+
+
+/* ---------------- GENERAL CSS SCROLL BAR ---------------- */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 0.9rem;
+  background: #aeaeae;}
+ 
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #464646; 
+  border-radius:0.9rem;
+  transition: background 0.3s ease-in-out;
+  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000000; 
+}
+
+/* ---------------- END OF GENERAL CSS SCROLL BAR ---------------- */
+
+.small{
+  font-size:1rem
+}
+
+
+
+/* ---------------- GENERAL CSS FOR FORMS ---------------- */
+.formControl{
+  width: 100%;
+  margin: 3rem 0;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+
+}
+.clarify{
+  font-family: 'Futura PT', sans-serif;
+  text-align: center;
+  font-size: 1.9rem;
+  line-height: 2.7rem;
+  letter-spacing: 1.425px;
+  font-weight: 300;
+  margin-bottom: 7rem;
+  text-align: center;
+
+}
+
+.span-clarify{
+  font-family: 'Source Sans Pro', sans-serif;
+  display: swap;
+
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #a2a2a2;
+
+}
+.inputLabel{
+  font-family: 'Futura PT', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+  letter-spacing: 3px;
+  text-align: left;
+  text-indent: 0%;
+
+}
+
+.inputField{
+  font-family: 'Futura PT', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  width:100%;
+  display: block;
+  padding: 1.2rem 2.4rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e8e8e1;
+  outline: none;
+}
+
+
+
+
+.btnSubmit{
+  font-family: 'Futura PT', sans-serif;
+  width: 100%;
+  padding: 1.3rem 2rem;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+ 
+}
+
+.btnSubmit:hover,.btnSubmit:focus{
+  background-color: rgb(65, 65, 65);
+  border: 1px solid #fff5f5;
+}
+
+
+
+.errorMessage{
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #fef6f6;
+  border: 1px solid #cf2d2e;
+  font-size: 1.8rem;
+  color: #f03e3e;
+}
+.errorMsgList{
+  padding: 0 1rem;
+}
+
+.successMessage{
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #ebfdf0;
+  border: 1px solid #acd6b4;
+  font-size: 1.8rem;
+  color: #57ad6b;
+
+}
+.successMsgList{
+  padding: 0 1rem;
+}
+
+/* ---------------- END OF GENERAL CSS FOR FORMS ---------------- */
+@media screen and (max-width: 768px) {
+  body{
+    /* overflow: hidden; */
+    overflow-x: hidden;
+  }
+}
+
+

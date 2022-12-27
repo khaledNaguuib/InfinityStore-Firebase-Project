@@ -1,0 +1,237 @@
+
+.layout-wrapper {
+    max-width: 100rem;
+    height: auto;
+    margin: 9.2rem auto 40rem auto;
+    position: relative;
+ /* overflow: hidden; */
+  }
+  .layout-bigArrow{
+    left: -6%;
+    width: 10rem;
+    top: 91%;;
+    aspect-ratio: 1/1;
+    position: absolute;
+  }
+  
+  .layout-section {
+    background: #F1EFE9;
+    height: 500px;
+    margin-top: 15em;
+    padding: 2em;
+    display: grid;
+    grid-template-areas: 
+        "airforce header header"
+        "airforce airforce-orange content"
+        "air-jordan airforce-orange content";
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr) 2fr;
+    grid-template-rows: auto 2fr 20rem;
+    position: relative;
+    border-bottom: 1px solid #d0c198;
+    border-right: 1px solid #d0c198;
+  
+  
+    
+  }
+ 
+  .imageClass {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+  }
+  .imageClass:hover{
+    transform: scale(1.02);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .layout-section::before {
+    position: absolute;
+    content: "wow";
+    font-weight: 900;
+    z-index: -1;
+    font-size: 27rem;
+    top: -30rem;
+    left: -32rem;
+    color: #000000;
+  }
+  .layout-wrapper::after {
+    text-transform: uppercase;
+    position: absolute;
+    content: "Brownnn";
+    font-weight: 800;
+    z-index: -1;
+    font-size: 14rem;
+    top: 8rem;
+    right: -37rem;
+    transform: rotate(90deg);
+    color: #cdc096;
+    opacity: 20%;
+  }
+  
+  .airforce {
+    grid-area: airforce;
+  }
+  .layout-title {
+    grid-area: header;
+  }
+  .airforce-orange {
+    grid-area: airforce-orange;
+  }
+  .content {
+    grid-area: content;
+  }
+  .air-jordan {
+    grid-area: air-jordan;
+    /* object-position: 0 -10rem; */
+  
+  }
+  
+  
+  
+  
+  .layout-title {
+    font-size: 8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.6rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1em;
+  }
+  
+  .content-desc, .content-link {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+  }
+  .content-desc {
+    margin: 0;
+  }
+  
+  .content-link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .content-arrow{
+    animation: shopArrow  1s alternate-reverse infinite;
+  }
+  @keyframes shopArrow {
+    from{
+      transform: translateX(-1rem);
+    }
+    to{
+      transform: translateX(1rem);
+    }
+    
+  }
+  
+  
+  
+  
+
+@media screen and (max-width: 768px) {
+  
+.layout-wrapper{
+  overflow: hidden;
+  margin: 9.2rem auto 20rem auto;
+
+}
+
+  .layout-section {
+    width: 100%;
+    height: auto;
+    margin-top: 15em ;
+    padding: 2em;
+    display: grid;
+    grid-template-areas: 
+        "airforce header header"
+        "airforce airforce-orange content"
+        "air-jordan airforce-orange content";
+    gap: 1em;
+    grid-template-columns: 6fr 6fr 1fr;
+    grid-template-rows: auto 2fr 20rem;
+    position: relative;
+    border-bottom: 1px solid #d0c198;
+    border-right: 1px solid #d0c198;
+  }
+  .layout-section::before {
+    position: absolute;
+    content: "wow";
+    font-weight: 900;
+    z-index: -1;
+    font-size: 15rem;
+    top: -18rem;
+    /* opacity: 30%; */
+    left: -7rem;
+    color: #000000;
+  }
+  .layout-wrapper::after {
+    text-transform: uppercase;
+    position: absolute;
+    content: "Brownnn";
+    z-index: -1;
+    font-size: 10rem;
+    top: 22rem;
+    right: -22rem;
+    transform: rotate(90deg);
+    color: #cdc096;
+    opacity: 20%;
+  }
+  
+  .layout-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1.6rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1em;
+  }
+  
+  .content-desc, .content-link {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  .content-desc {
+    margin: 0;
+  }
+  
+  .content-link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  .air-jordan {
+    grid-area: air-jordan;
+  
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .content-arrow{
+    width: 15rem;
+
+    animation: shopArrow  1s alternate-reverse infinite;
+  }
+  @keyframes shopArrow {
+    from{
+      transform: translateX(-1rem);
+    }
+  }
+
+
+
+}
