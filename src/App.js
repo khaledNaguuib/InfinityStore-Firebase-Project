@@ -64,7 +64,6 @@ function App() {
 
   console.log("Auth Context From APP.js", authCtx);
 
-  // wanna preserve the auth state when the user refreshes the page
 
   // to preserve the login state when the user refreshes the page
   useEffect(() => {

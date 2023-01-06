@@ -11,7 +11,7 @@ function Success() {
   // clear the cart
   useEffect(() => {
     cartCtx.clearCart();
-  }, [cartCtx]);
+  }, []);
   return (
     <>
       <div className={styles.successContainer}>

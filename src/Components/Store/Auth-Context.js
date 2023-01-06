@@ -9,6 +9,8 @@ const authContext = React.createContext({
   emailVerified: false,
   token: "",
   isLoggedIn: false,
+  setUserName: (displayName) => {},
+  getUserName: () => {},
   setUserInfo: (userData) => {},
   getUserData: () => {},
   updateEmail: (email) => {},
@@ -33,10 +35,8 @@ export const AuthContextProvider = (props) => {
   // no token => ain't logged in   ||  token => logged in
   const userIsLoggedIn = !!token;
 
-  const isEmailVerfied = (value, email) => {
+  const isEmailVerfied = (value) => {
     setEmailVerified(value);
-    setEmail(email);
-    localStorage.setItem("email", email);
     localStorage.setItem("emailVerified", value);
   };
   const registerHandler = (displayName, email, token) => {
@@ -62,9 +62,15 @@ export const AuthContextProvider = (props) => {
     setDisplayName(null);
     setEmail(null);
     setOobCode(null);
+    setEmailVerified(false);
+    setUserData({});
 
     localStorage.removeItem("token");
+    localStorage.removeItem("displayName");
     localStorage.removeItem("email");
+    localStorage.removeItem("oobCode");
+    localStorage.removeItem("emailVerified");
+    localStorage.removeItem("userData");
   };
   // login function
   const loginHandler = (token, email = "", displayName, emailVerified) => {
@@ -94,6 +100,15 @@ export const AuthContextProvider = (props) => {
     return userData;
   };
 
+  // set display Nane
+  const setUserNameHandler = (displayName) => {
+    setDisplayName(displayName);
+  };
+  const getUserNameHandler = () => {
+    return displayName;
+  };
+
+
   // return the context provider
   const contextValue = {
     // userData: userData,
@@ -103,6 +118,8 @@ export const AuthContextProvider = (props) => {
     emailVerified: emailVerified,
     token: token,
     isLoggedIn: userIsLoggedIn,
+    setUserName: setUserNameHandler,
+    getUserName: getUserNameHandler,
     updateEmail: updateEmailHandler,
     register: registerHandler,
     login: loginHandler,

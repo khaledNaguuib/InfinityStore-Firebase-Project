@@ -77,7 +77,7 @@ const ConfirmEmail = () => {
       setEmailAddress(data.email);
       if (data.emailVerified) {
         setEmailVerified(data.emailVerified);
-        authCtx.isEmailVerfied(data.emailVerified, data.email);
+        authCtx.isEmailVerfied(data.emailVerified);
         authCtx.isOobCode(oobCode);
         setIsThereError(false);
         setSuccessMessage("Email Verified Successfully");
@@ -90,53 +90,54 @@ const ConfirmEmail = () => {
     ConfirmEmail(EmailVerficationURL, oobCode);
   }, []);
 
-  // get the user who has the same email address as the email address in the response from the confirm email rest API
-  useEffect(() => {
-    const getUserKey = async (users, emailAddress) => {
-      const user = users.find((user) => user.email === emailAddress);
-      setUser(user);
+  
+  // // get the user who has the same email address as the email address in the response from the confirm email rest API
+  // useEffect(() => {
+  //   const getUserKey = async (users, emailAddress) => {
+  //     const user = users.find((user) => user.email === emailAddress);
+  //     setUser(user);
 
-      console.log("user", user);
-      if (user) {
-        setUserId(user.id);
-      }
-    };
-    getUserKey(users, emailAddress);
-    // filter the users to get all the users except the user who has the same email address as the email address in the response from the confirm email rest API
-    const filteredUsers = users.filter((user) => user.email !== emailAddress);
-    // update the emailVerified property in the database to true
-    const updateEmailVerified = async (userId) => {
-      const response = await fetch(
-        `https://react-http-products-default-rtdb.firebaseio.com/users.json`,
-        {
-          method: "PUT",
-          body: JSON.stringify({
-            ...filteredUsers,
-            [userId]: {
-              ID: user.id,
-              firstName: user.firstName,
-              lastName: user.lastName,
-              email: user.email,
-              password: user.password,
-              emailVerified: emailVerified,
-            },
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log("Respone from updateEmailVerified", response);
-      if (!response.ok) {
-        throw new Error("Something went wrong!");
-      }
-      const data = await response.json();
-      console.log("Data from updateEmailVerified", data);
-    };
-    updateEmailVerified(userId);
-  }, [emailAddress, users, user, userId, emailVerified]);
+  //     console.log("user", user);
+  //     if (user) {
+  //       setUserId(user.id);
+  //     }
+  //   };
+  //   getUserKey(users, emailAddress);
+  //   // filter the users to get all the users except the user who has the same email address as the email address in the response from the confirm email rest API
+  //   const filteredUsers = users.filter((user) => user.email !== emailAddress);
+  //   // update the emailVerified property in the database to true
+  //   const updateEmailVerified = async (userId) => {
+  //     const response = await fetch(
+  //       `https://react-http-products-default-rtdb.firebaseio.com/users.json`,
+  //       {
+  //         method: "PUT",
+  //         body: JSON.stringify({
+  //           ...filteredUsers,
+  //           [userId]: {
+  //             ID: Math.random().toString() ,
+  //             firstName: user.firstName,
+  //             lastName: user.lastName,
+  //             email: user.email,
+  //             password: user.password,
+  //             emailVerified: emailVerified,
+  //           },
+  //         }),
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+  //     console.log("Respone from updateEmailVerified", response);
+  //     if (!response.ok) {
+  //       throw new Error("Something went wrong!");
+  //     }
+  //     const data = await response.json();
+  //     console.log("Data from updateEmailVerified", data);
+  //   };
+  //   updateEmailVerified(userId);
+  // }, [emailAddress, users, user, userId, emailVerified]);
 
-  console.log("users", users);
+  // console.log("users", users);
 
   return (
     <div className={styles.confirmEmailWrapper}>

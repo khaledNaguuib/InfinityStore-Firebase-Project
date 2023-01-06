@@ -1,8 +1,10 @@
 import React, { useRef, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./changePassword.module.css";
 import AuthContext from "../Components/Store/Auth-Context";
 
 function ChangePassword() {
+  const navigate = useNavigate();
   // Handling feedbacks
   const [isThereError, setIsThereError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -191,6 +193,11 @@ function ChangePassword() {
 
     // Change the password
     await changePassword(changePasswordApiURL, enteredPassword1);
+    // Logging the user out and navigate to login page
+    authCtx.logout();
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
 
     // Resetting the form
     passwordInputRef1.current.value = "";

@@ -1,1 +1,0 @@
-{"version":3,"sources":["Components/Layout/Main.js"],"names":["Main"],"mappings":"qIAAA,yBAUeA,UARF,WACT,OACI,+BACA,cAAC,IAAM,KAGf,C","file":"static/js/20.be82c03d.chunk.js","sourcesContent":["import { Outlet } from 'react-router-dom'\n\nconst Main = () => {\n    return (\n        <main>\n        <Outlet />\n        </main>\n    )\n};\n\nexport default Main"],"sourceRoot":""}

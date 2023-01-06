@@ -2,17 +2,53 @@ import React, { useRef, useState, useContext, useEffect } from "react";
 import authContext from "../Components/Store/Auth-Context";
 import styles from "./userprofile.module.css";
 import { Link } from "react-router-dom";
+ 
 const UserProfile = () => {
   // use state to store the user data
   const [userData, setUserData] = useState({});
   // get the user token from authContext
   const authCtx = useContext(authContext);
-  const userDisplayName = authCtx.displayName;
+  // const userDisplayName = authCtx.displayName;
   const userToken = authCtx.token;
-  const isEmailVerfied = userData.emailVerified;
+
 
   // get the email from local storage
-  const userEmail = localStorage.getItem("email");
+  const [emailVerificationStatus, setEmailVerificationStatus] = useState(false);
+  console.log('emailVerificationStatus',emailVerificationStatus)
+  const [VerficationStatusMessage, setVerficationStatusMessage] = useState("");
+  console.log('VerficationStatusMessage',VerficationStatusMessage)
+
+
+
+ 
+
+  // get user display name from realtime database and set it in the user data state
+  // condition if the userdata email is equal to the email from user
+  const [loadedUsers, setLoadedUsers] = useState([]);
+  const getUserAPiURL =
+    " https://react-http-products-default-rtdb.firebaseio.com/users.json";
+  useEffect(() => {
+    const getUserData = async (url) => {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Something went wrong while getting the user data!");
+      }
+      const data = await response.json();
+      const loadedUsers = [];
+      for (const key in data) {
+        loadedUsers.push({
+          id: key,
+          email: data[key].email,
+          firstName: data[key].firstName,
+          lastName: data[key].lastName,
+          emailVerified: data[key].emailVerified,
+        });
+      }
+      setLoadedUsers(loadedUsers);
+    };
+    getUserData(getUserAPiURL);
+  }, []);
+  console.log("loaded users from real time database", loadedUsers);
 
   // get the user data from Firebase
   const APIURL =
@@ -32,12 +68,17 @@ const UserProfile = () => {
         throw new Error("Something went wrong while getting the user data!");
       }
       const data = await response.json();
+
       if (data) {
+        // set the user data in the state
         setUserData(data.users[0]);
-        // set the user data in the authContext
+
         authCtx.setUserInfo(data.users[0]);
         // set the user data in the local storage
         localStorage.setItem("userData", JSON.stringify(data.users[0]));
+        // override emailVerifed property in Localstorage
+        localStorage.setItem("emailVerified", data.users[0].emailVerified);
+        setEmailVerificationStatus(data?.users[0]?.emailVerified);
       } else if (!data) {
         console.log("No data Found");
       }
@@ -45,9 +86,29 @@ const UserProfile = () => {
     getUserData();
   }, []);
 
-  console.log("userData", userData);
-  console.log("userDisplayName", userDisplayName);
+  // function handler to send email verification link
+  let emailVerificationAPILink =
+    "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDNDXcfx6jpm5Y_121TikxsU7-Yx2ZrmeQ";
+  const sendEmailVerificationLink = async () => {
+    const response = await fetch(emailVerificationAPILink, {
+      method: "POST",
+      body: JSON.stringify({
+        requestType: "VERIFY_EMAIL",
+        idToken: userToken,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    console.log("Email Verfication Response", response);
+    if (!response.ok) {
+      throw new Error(
+        "Something went wrong while sending the email Verification! Plaease try again later"
+      );
+    }
+    const data = await response.json();
+    console.log("Email Verfication Data", data);
+  };
 
+  console.log("userData", userData);
   return (
     <section className={styles.profileWrapper}>
       <div className={styles.profileContainer}>
@@ -55,11 +116,7 @@ const UserProfile = () => {
           <h1 className={styles.title}>My Account</h1>
           <div className={styles.emailContainer}>
             <div className={styles.emailInfo}>
-              {/* <p className={styles.emailTitle}>Email:</p> */}
-              {/* <p className={styles.email}>{userData.email}</p> */}
-              <p className={styles.email}>{userEmail}</p>
-
-              {/* <p className={styles.email}>khalednaguib15188@gmail.com</p> */}
+              <p className={styles.email}>{userData.email}</p>
             </div>
           </div>
         </div>
@@ -77,26 +134,35 @@ const UserProfile = () => {
           {/* ------- USER INFO -------------- */}
           <div className={styles.userInfo}>
             <h2 className={styles.userInfoTitle}>Account Details</h2>
-            <p className={styles.displayName}> {userDisplayName}</p>
+            <p className={styles.displayName}> {userData.displayName}</p>
 
             <div className={styles.isEmailVerfiedContainer}>
               <div className={styles.emailVerficationInfo}>
                 <p className={styles.emailTitle}>Email Verfication:</p>
-                {!isEmailVerfied && (
+
+                
+                {!emailVerificationStatus && (
                   <p className={styles.emailNotVerfied}>Not Verfied</p>
                 )}
-                {isEmailVerfied && (
+                {emailVerificationStatus && (
                   <p className={styles.emailVerfied}>Verfied</p>
                 )}
               </div>
             </div>
 
             <div className={styles.emailActions}>
-              <div className={styles.changeActionDiv}>
-                <Link to="/verifyEmail" className={styles.emailActionBtn}>
-                  Verify Email
-                </Link>
-              </div>
+              {/* Show Verify Email Button only if the email is not verified */}
+              {!emailVerificationStatus && (
+                <div className={styles.changeActionDiv}>
+                  <Link
+                    onClick={sendEmailVerificationLink}
+                    to="/verifyEmail"
+                    className={styles.emailActionBtn}
+                  >
+                    Verify Email
+                  </Link>
+                </div>
+              )}
               <div className={styles.changeActionDiv}>
                 <Link to="/changeEmail" className={styles.emailActionBtn}>
                   Change Email

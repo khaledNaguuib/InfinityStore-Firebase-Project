@@ -10,10 +10,15 @@ import styles from "./register.module.css";
 import { Fade } from "react-reveal";
 
 const Register = (props) => {
-  // Auth context
+    // Auth context
   const authCtx = useContext(authContext);
   // Set loading state to true initially to load the page with a loader
   // const [loading, setLoading] = useState(true);
+
+  // state to store user display name
+  const [token, setToken] = useState("");
+  const [email, setEmail] = useState("");
+  const [updatedProfileData, setUpdatedProfileData] = useState({});
 
   // to navigate to another page after successful register
   const navigate = useNavigate();
@@ -115,7 +120,6 @@ Checking overall validity of form
   };
 
   //Handling all possible Errors:
-
   // If Faliure =>
   const [isThereError, setIsThereError] = useState(false);
   const [errorText, setErrorText] = useState("");
@@ -131,13 +135,11 @@ Checking overall validity of form
       const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify({
-          
+          id: Math.random().toString(),
           firstName: enteredFirstName,
           lastName: enteredLastName,
           email: enteredEmail,
-          password: enteredPassword,
           emailVerified: false,
-          
         }),
         headers: {
           "Content-Type": "application/json",
@@ -154,11 +156,44 @@ Checking overall validity of form
     }
   };
 
+  // You can update a user's profile (display name / photo URL) by issuing an HTTP
+  //  POST request to the Auth setAccountInfo endpoint.
+
+  // Update Profile to set Display Name and Profile Photo in the future.
+  const updateProfileURL =
+    "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDNDXcfx6jpm5Y_121TikxsU7-Yx2ZrmeQ";
+  const updateProfileURLHandler = async (url, token, displayName) => {
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        idToken: token,
+        displayName: displayName,
+        photoUrl: null,
+        deleteAttribute: ["PHOTO_URL"],
+        returnSecureToken: true,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log("response to update profile user", response);
+    if (!response.ok) {
+      throw new Error("Something went wrong!");
+    }
+    const data = await response.json();
+    if (data.error) {
+      console.log(data.error.message);
+    } else if (data) {
+      console.log(data);
+      setUpdatedProfileData(data);
+    }
+  };
+
   // Sign Up with Email URL API
-  let URL =
+  const URL =
     "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDNDXcfx6jpm5Y_121TikxsU7-Yx2ZrmeQ";
 
-  let verifyEmailURL =
+  const verifyEmailURL =
     "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDNDXcfx6jpm5Y_121TikxsU7-Yx2ZrmeQ";
 
   // Checking validity of inputs and sending data to server when submit button is clicked
@@ -176,11 +211,9 @@ Checking overall validity of form
     // getting the data from the inputs
     const enteredFirstName = firstNameRef.current.value;
     const enteredLastName = lastNameRef.current.value;
-    const displayName = enteredFirstName + " " + enteredLastName;
+    const userDisplayName = enteredFirstName + " " + enteredLastName;
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-
-    console.log("In Register", displayName);
 
     // sending the data to the server
     fetch(URL, {
@@ -236,8 +269,18 @@ Checking overall validity of form
           );
           // setting the token in the context
           // authCtx.login(data.idToken);
-          data.displayName = displayName;
-          authCtx.register(displayName, data.email, data.idToken);
+          setToken(data.idToken);
+          setEmail(data.email);
+          authCtx.register(userDisplayName, data.email, data.idToken);
+
+          // updating the profile of the user
+          if (data.idToken)
+            updateProfileURLHandler(
+              updateProfileURL,
+              data.idToken,
+              userDisplayName
+            );
+          else console.log("data.idToken is null");
 
           // sending the email verfication request
           verfiyEmail(verifyEmailURL, data.idToken);
@@ -252,6 +295,8 @@ Checking overall validity of form
         console.log(err.message);
       });
 
+    authCtx.setUserName(userDisplayName);
+
     // resetting the inputs
     resetFirstNameInput();
     resetLastNameInput();
@@ -259,6 +304,7 @@ Checking overall validity of form
     resetPasswordInput();
   };
 
+  console.log("updateProfileURLHandler Data", updatedProfileData);
   console.log("SuccessMSg", successText);
   console.log("ErrorMSg", errorText);
   console.log("isThereError", isThereError);

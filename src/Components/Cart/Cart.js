@@ -18,6 +18,7 @@ const getStripe = () => {
   return stripePromise;
 };
 
+
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
