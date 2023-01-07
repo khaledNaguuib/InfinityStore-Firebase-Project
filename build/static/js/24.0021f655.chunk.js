@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-complete-guide"]=this["webpackJsonpreact-complete-guide"]||[]).push([[24],{130:function(e,o,t){"use strict";t.r(o);var c=t(0),a=t(3);o.default=function(){var e=Object(a.C)(),o=new URLSearchParams(window.location.search),t=o.get("oobCode"),n=o.get("mode");return console.log(n),Object(c.useEffect)((function(){e("verifyEmail"===n?"/verfiy?oobCode=".concat(t):"resetPassword"===n?"/reset?oobCode=".concat(t):"/changeEmail")}),[n,e,t]),null}}}]);
+//# sourceMappingURL=24.0021f655.chunk.js.map

@@ -3,7 +3,7 @@ import { WavyLink } from "react-wavy-transitions";
 import HeaderCartButton from "./HeaderCartButton";
 import Logo from "../../asstes-optimized/LOGOOOOO.webp";
 import authContext from "../Store/Auth-Context";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 // import { faUser } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +11,12 @@ import { useNavigate } from "react-router-dom";
 import styles from "./navbar.module.css";
 
 const NavBar = (props) => {
+  // navigation
   const navigate = useNavigate();
+  // ref for the navbar
+  const navRef = useRef();
+  // state for the navbar sticky
+  const [isSticky, setIsSticky] = useState(false);
 
   const profileNavigateHandler = () => {
     navigate("/profile");
@@ -33,8 +38,31 @@ const NavBar = (props) => {
     authCtx.logout();
   };
 
+  useEffect(() => {
+    const header = navRef?.current;
+    const observer = new IntersectionObserver(
+      ([e]) => {
+        setIsSticky(e.isIntersecting);
+      },
+      { threshold: [0.1] }
+    );
+    console.log(observer);
+
+    if (header) {
+      observer.observe(header);
+    }
+
+    // clean up the observer
+    return () => {
+      observer.unobserve(header);
+    };
+  }, [navRef]);
+
   return (
-    <header className={styles.header}>
+    <header
+      ref={navRef}
+      className={`${styles.header} ${isSticky ? styles.sticky : ""}`}
+    >
       <button
         onClick={toggleHandler}
         className={`${styles["hamburger"]} ${styles["hamburger--squeeze"]} ${
@@ -45,10 +73,12 @@ const NavBar = (props) => {
           <span className={styles["hamburger-inner"]}></span>
         </span>
       </button>
+
       {/* <a href="#" className={styles.logo}>
           Shoe
           <span className={styles.logoSpan}>Brand</span>
         </a> */}
+        
       <Link to="/">
         <img src={Logo} alt="Omnifood logo" className={styles.logo} />
       </Link>
